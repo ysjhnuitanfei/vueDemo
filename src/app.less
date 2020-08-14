@@ -53,26 +53,58 @@ pre code {
   overflow-x: auto;
   color: #525252;
   white-space: pre;
-  padding: 1.2em 1.4em;
-  font-size: 0.85rem;
-  line-height: 1.6rem;
+  padding: 12px 14px;
+  line-height: 1.4;
+  font-size: 14px;
   display: block;
-}
-
-.code-show {
-  border: 1px solid #eee;
-  border-radius: 2px;
-  padding: 25px 35px;
-  margin-top: 1em;
-  margin-bottom: 40px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  overflow-x: auto;
 }
 
 .page {
   margin: auto;
-  max-width: 900px;
+  max-width: 1000px;
+}
+
+.ins-text {
+  margin-top: 10px;
+  // padding: 5px 0;
+  color: #666;
+  line-height: 1.6;
+}
+
+.text {
+  color: #666;
+  line-height: 1.6;
+}
+
+.trans-enter {
+  transition: all 0.5s;
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp
+}
+
+.trans-leave {
+  transition: all 0s;
+  opacity: 0;
+  display: none;
+}
+
+.animated {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px)
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0)
+  }
 }

@@ -2,7 +2,7 @@
   <div class="page">
     <h3>文本</h3>
     <pre>
-      <code>{{message}}</code>
+      <code>{{code}}</code>
     </pre>
     <div class="code-show">{{messages}}</div>
   </div>
@@ -16,7 +16,7 @@ export default {
   components: {},
   data () {
     return {
-      message: `<div>{{message}}</div>
+      code: `<div>{{message}}</div>
 data () {
   return {
     message: '我是一段文本'
@@ -30,9 +30,6 @@ data () {
 
   },
   mounted () {
-    var aaa = `
-    <div></div>
-  `
 
   },
   methods: {

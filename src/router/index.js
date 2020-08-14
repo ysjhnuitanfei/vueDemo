@@ -8,19 +8,24 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 
 const routes = [{
-    path: '',
+    path: '/',
     name: 'interpolation',
-    component: () => import('../views/interpolation/Index.vue')
+    component: () => import( /*webpackChunkName: "interpolation"*/ '../views/interpolation/Index.vue')
   },
   {
     path: '/cycle',
     name: 'cycle',
-    component: () => import('../views/cycle/Index.vue')
+    component: () => import( /*webpackChunkName: "cycle"*/ '../views/cycle/Index.vue')
+  },
+  {
+    path: '/recursive',
+    name: 'recursive',
+    component: () => import( /*webpackChunkName: "recursive"*/ '../views/recursive/Index.vue')
   }
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: '',
   base: process.env.BASE_URL,
   routes
 })

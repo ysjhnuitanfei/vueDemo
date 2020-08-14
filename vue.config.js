@@ -6,7 +6,7 @@ const pluginOptions = {
 }
 
 module.exports = {
-  publicPath: '',
+  publicPath: './',
   outputDir: 'build',
   assetsDir: 'static',
 

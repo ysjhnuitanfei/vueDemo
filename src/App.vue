@@ -5,21 +5,23 @@
         <Navigation></Navigation>
       </div>
       <div class="right-container">
-        <router-view></router-view>
+        <transition enter-active-class="trans-enter" leave-active-class="trans-leave">
+          <router-view class="animated"></router-view>
+        </transition>
       </div>
     </div>
-    <router-view />
   </div>
 </template>
 <script>
-import Navigation from '@/components/Navigation'
 export default {
   name: 'App',
   components: {
-    Navigation
+    Navigation: () => import('@/components/Navigation')
   },
   created () {
 
+  },
+  mounted () {
   }
 }
 </script>

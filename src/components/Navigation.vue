@@ -3,7 +3,7 @@
     <article>
       <h1>实例列表</h1>
       <ul class="nav-ul">
-        <li class="nav-list" :style="{'color': size == index ? 'red' : ''}" v-for="(item, index) in list"
+        <li class="nav-list" :style="{'color': name == item.name ? 'red' : ''}" v-for="(item, index) in list"
           :key="item.title" @click="goPath(item, index)">
           {{item.title}}
         </li>
@@ -21,7 +21,14 @@ export default {
   data () {
     return {
       list: [],
-      size: 0
+      name: 'interpolation'
+    }
+  },
+  watch: {
+    '$route': {
+      handler: function (val, oldval) {
+        this.name = val.name
+      }
     }
   },
   created () {
@@ -31,11 +38,10 @@ export default {
   },
   methods: {
     goPath (item, index) {
-      this.size = index
       if (item.name == 'interpolation') {
         this.$router.push('/')
       } else {
-        this.$router.push(item.name)
+        this.$router.push('/' + item.name)
       }
     }
   }

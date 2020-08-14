@@ -8,7 +8,8 @@
       "name": "cycle"
     },
     {
-      "title": "指令"
+      "title": "递归组件",
+      "name": "recursive"
     }
   ]
 }
